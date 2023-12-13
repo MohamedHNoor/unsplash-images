@@ -1,5 +1,3 @@
-/* ============= GLOBAL CSS =============== */
-
 *,
 ::after,
 ::before {
@@ -10,7 +8,7 @@
 
 html {
   font-size: 100%;
-} /* 16px */
+} /*16px*/
 
 :root {
   /* colors */
@@ -35,7 +33,6 @@ html {
   --grey-700: #334155;
   --grey-800: #1e293b;
   --grey-900: #0f172a;
-
   /* rest of the colors */
   --black: #222;
   --white: #fff;
@@ -43,54 +40,36 @@ html {
   --red-dark: #842029;
   --green-light: #d1e7dd;
   --green-dark: #0f5132;
+
   --small-text: 0.875rem;
   --extra-small-text: 0.7em;
-
   /* rest of the vars */
-  --backgroundColor: var(--grey-50);
-  --textColor: var(--grey-900);
   --borderRadius: 0.25rem;
   --letterSpacing: 1px;
   --transition: 0.3s ease-in-out all;
   --max-width: 1120px;
   --fixed-width: 600px;
-
-  /* box shadow */
+  --view-width: 90vw;
+  /* box shadow*/
   --shadow-1: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-  --shadow-2:
-    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+  --shadow-2: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
     0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  --shadow-3:
-    0 10px 15px -3px rgba(0, 0, 0, 0.1),
+  --shadow-3: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
     0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  --shadow-4:
-    0 20px 25px -5px rgba(0, 0, 0, 0.1),
+  --shadow-4: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
     0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  /* dark mode setup */
 }
 
 body {
-  background: var(--backgroundColor);
-  font-family:
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    Oxygen,
-    Ubuntu,
-    Cantarell,
-    'Open Sans',
-    'Helvetica Neue',
-    sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-weight: 400;
   line-height: 1;
-  color: var(--textColor);
 }
-
 p {
   margin: 0;
 }
-
 h1,
 h2,
 h3,
@@ -105,24 +84,46 @@ h5 {
 }
 
 h1 {
-  font-size: 3.052rem;
+  font-size: clamp(2rem, 5vw, 5rem); /* Large heading */
 }
 
 h2 {
-  font-size: 2.441rem;
+  font-size: clamp(1.5rem, 3vw, 3rem); /* Medium heading */
 }
 
 h3 {
-  font-size: 1.953rem;
+  font-size: clamp(1.25rem, 2.5vw, 2.5rem); /* Small heading */
 }
 
 h4 {
-  font-size: 1.563rem;
+  font-size: clamp(1rem, 2vw, 2rem); /* Extra small heading */
 }
 
 h5 {
-  font-size: 1.25rem;
+  font-size: clamp(0.875rem, 1.5vw, 1.5rem); /* Tiny heading */
 }
+
+/* BIGGER FONTS */
+/* h1 {
+  font-size: clamp(3rem, 6vw, 6rem);
+}
+
+h2 {
+  font-size: clamp(2.5rem, 5vw, 5rem);
+}
+
+h3 {
+  font-size: clamp(2rem, 4vw, 4rem);
+}
+
+h4 {
+  font-size: clamp(1.5rem, 3vw, 3rem);
+}
+
+h5 {
+  font-size: clamp(1rem, 2vw, 2rem);
+}
+ */
 
 .text {
   margin-bottom: 1.5rem;
@@ -137,7 +138,6 @@ small,
 a {
   text-decoration: none;
 }
-
 ul {
   list-style-type: none;
   padding: 0;
@@ -148,7 +148,6 @@ ul {
   display: block;
   object-fit: cover;
 }
-
 /* buttons */
 
 .btn {
@@ -164,22 +163,18 @@ ul {
   text-transform: capitalize;
   display: inline-block;
 }
-
 .btn:hover {
   background: var(--primary-700);
   box-shadow: var(--shadow-3);
 }
-
 .btn-hipster {
   color: var(--primary-500);
   background: var(--primary-200);
 }
-
 .btn-hipster:hover {
   color: var(--primary-200);
   background: var(--primary-700);
 }
-
 .btn-block {
   width: 100%;
 }
@@ -196,12 +191,10 @@ ul {
   color: var(--red-dark);
   background: var(--red-light);
 }
-
 .alert-success {
   color: var(--green-dark);
   background: var(--green-light);
 }
-
 /* form */
 
 .form {
@@ -213,7 +206,6 @@ ul {
   padding: 2rem 2.5rem;
   margin: 3rem auto;
 }
-
 .form-label {
   display: block;
   font-size: var(--small-text);
@@ -221,7 +213,6 @@ ul {
   text-transform: capitalize;
   letter-spacing: var(--letterSpacing);
 }
-
 .form-input,
 .form-textarea {
   width: 100%;
@@ -238,18 +229,15 @@ ul {
 .form-textarea {
   height: 7rem;
 }
-
 ::placeholder {
   font-family: inherit;
   color: var(--grey-400);
 }
-
 .form-alert {
   color: var(--red-dark);
   letter-spacing: var(--letterSpacing);
   text-transform: capitalize;
 }
-
 /* alert */
 
 @keyframes spinner {
@@ -280,4 +268,84 @@ ul {
   height: 0.25rem;
   margin: 0 auto;
   margin-top: 1rem;
+}
+
+/* Toggle container */
+
+.toggle-container {
+  width: var(--view-width);
+  max-width: var(--max-width);
+  padding: 1rem 0;
+  margin: 0 auto;
+  display: flex;
+  justify-content: end;
+}
+
+.dark-toggle {
+  background: transparent;
+  border-color: transparent;
+  width: 5rem;
+  height: 2rem;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+.toggle-icon {
+  font-size: 1.5rem;
+  color: var(--textColor);
+}
+
+/* Search form */
+.title {
+  color: var(--primary-500);
+}
+.search-form {
+  width: var(--view-width);
+  max-width: var(--fixed-width);
+  margin: 0 auto;
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+}
+
+.search-input {
+  border-color: var(--grey-300);
+  transition: var(--darkModeTransition);
+  color: var(--textColor);
+  border-radius: 0;
+
+  /* border-right: none; */
+}
+
+.search-form .btn {
+  border-radius: 0;
+}
+.search-form .btn:hover {
+  background: var(--primary-300);
+  color: var(--black);
+}
+
+/* Gallery */
+
+.image-container {
+  width: var(--view-width);
+  max-width: var(--max-width);
+  margin: 3rem auto;
+  display: grid;
+  gap: 2rem;
+}
+
+.image-container .img {
+  height: 10rem;
+}
+
+@media (min-width: 768px) {
+  .image-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (min-width: 992px) {
+  .image-container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
