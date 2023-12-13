@@ -1,5 +1,13 @@
-function App() {
-  return <h1>React template</h1>;
-}
+import { ThemeToggle, SearchForm, Gallery } from './components';
+
+const App = () => {
+  return (
+    <main>
+      <ThemeToggle />
+      <SearchForm />
+      <Gallery />
+    </main>
+  );
+};
 
 export default App;
