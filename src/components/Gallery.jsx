@@ -3,8 +3,9 @@ import axios from 'axios';
 import React from 'react';
 import { useGlobalContext } from '../context';
 
-const url =
-  'https://api.unsplash.com/search/photos?client_id=uT8i03-dsUfAx2rdCQ4zDbG2CDWKwOTpCqhfUu57E7I';
+const url = `https://api.unsplash.com/search/photos?client_id=${
+  import.meta.env.VITE_API_KEY
+}`;
 
 const Gallery = () => {
   const { searchTerm } = useGlobalContext();
