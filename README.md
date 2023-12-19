@@ -4,9 +4,9 @@
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
+- JavaScript
+- React
+- React Query
 
 ## Live Demo
 
